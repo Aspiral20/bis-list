@@ -5,7 +5,7 @@ import cn from 'classnames'
 interface CharProps {
 }
 
-const defaultUrlImages = "/bis-list/images/char/items"
+const defaultUrlImages = "/images/char/items"
 
 const charItems = [
   {
