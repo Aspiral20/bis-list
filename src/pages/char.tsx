@@ -5,7 +5,7 @@ import cn from 'classnames'
 interface CharProps {
 }
 
-const defaultUrlImages = "/images/char/items"
+const defaultUrlImages = "/bis-list/images/char/items"
 
 const charItems = [
   {
@@ -82,7 +82,7 @@ const charItems = [
     id: uuid(),
     position: 'left left-8',
     type: 'Wrist',
-    link: 'http://mop-shoot.tauri.hu/?item=104429',
+    link: 'https://mop-shoot.tauri.hu/?item=104429',
     boss: 'Immerseus (Глубиний)',
     description: `${defaultUrlImages}/description/wrist_description.png`,
     icon: `${defaultUrlImages}/icon/wrist_icon.jpg`,
@@ -92,7 +92,7 @@ const charItems = [
     id: uuid(),
     position: 'center center-1',
     type: 'Main Hand',
-    link: 'http://mop-shoot.tauri.hu/?item=103873',
+    link: 'https://mop-shoot.tauri.hu/?item=103873',
     boss: 'Sha of Pride (Ша Гордыни)',
     description: `${defaultUrlImages}/description/main_hand_description.png`,
     icon: `${defaultUrlImages}/icon/main_hand_icon.jpg`,
@@ -112,7 +112,7 @@ const charItems = [
     id: uuid(),
     position: 'right right-1',
     type: 'Hands',
-    link: 'http://mop-shoot.tauri.hu/?item=99388',
+    link: 'https://mop-shoot.tauri.hu/?item=99388',
     boss: 'Nazgrim (Назгрим)',
     description: `${defaultUrlImages}/description/hands_description.png`,
     icon: `${defaultUrlImages}/icon/hands_icon.jpg`,
@@ -122,7 +122,7 @@ const charItems = [
     id: uuid(),
     position: 'right right-2',
     type: 'Waist',
-    link: 'http://mop-shoot.tauri.hu/?item=104504',
+    link: 'https://mop-shoot.tauri.hu/?item=104504',
     boss: 'Galakras (Галакрас)',
     description: `${defaultUrlImages}/description/waist_description.png`,
     icon: `${defaultUrlImages}/icon/waist_icon.jpg`,
@@ -132,7 +132,7 @@ const charItems = [
     id: uuid(),
     position: 'right right-3',
     type: 'Legs',
-    link: 'http://mop-shoot.tauri.hu/?item=104556',
+    link: 'https://mop-shoot.tauri.hu/?item=104556',
     boss: 'Nazgrim (Назгрим)',
     description: `${defaultUrlImages}/description/legs_description.png`,
     icon: `${defaultUrlImages}/icon/legs_icon.jpg`,
@@ -192,8 +192,6 @@ const charItems = [
 
 const Char: FC<CharProps> = ({}) => {
   const [bisItems, setBisItems] = useState(charItems)
-
-  console.log(bisItems)
 
   return (
     <div className="char">

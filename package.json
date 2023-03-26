@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/Aspiral20/bis-list",
+  "homepage": "http://Aspiral20.github.io/bis-list",
   "name": "react-typescript",
   "version": "0.1.0",
   "private": true,
@@ -30,6 +30,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
