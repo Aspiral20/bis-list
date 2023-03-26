@@ -1,0 +1,198 @@
+@mixin generate_boxes {
+
+}
+
+$box_size: 40px;
+
+.char {
+  padding: 15px;
+
+  &__container {
+    @include margin_left-right(auto);
+    margin-top: 220px;
+    margin-bottom: 275px;
+    max-width: 370px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+
+  &__info {
+    &_title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .char_interface {
+      display: grid;
+      max-width: calc(40px * 8 + 4px * 7 + 16px + 2px);
+      grid-template-columns: repeat(8, $box_size);
+      grid-template-rows: repeat(8, $box_size);
+      grid-gap: 4px;
+      background-color: #202020;
+      border: 1px solid #444;
+      padding: 8px;
+
+      .char_box {
+        @include width-height(100%);
+        //background-color: white;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: 1px solid #444;
+        border-radius: 3px;
+
+        .char_item {
+          @include width-height(100%);
+          opacity: .75;
+          transition: .75s;
+
+          .char_link {
+            display: inline-block;
+            @include width-height(100%);
+
+            .item_icon {
+              @include width-height(100%);
+            }
+          }
+        }
+
+        .char_item_description {
+          display: block;
+          position: absolute;
+          z-index: 1;
+          background-position: center;
+          background-repeat: repeat;
+          background-size: 200%;
+          background-color: #202020;
+          border: 1px solid #444;
+          border-radius: 3px;
+
+          .description_boss {
+            @include margin_top-bottom(3px);
+            padding-left: 10px;
+            color: white;
+          }
+
+          .description_image {
+          }
+        }
+
+        &.hovered {
+          .char_item {
+            opacity: 1;
+            transition: .75s;
+          }
+        }
+
+        &.grid_left {
+          grid-column: 1/2;
+
+          .char_item_description {
+            left: calc(100% + 5px);
+          }
+        }
+
+        &.grid_right {
+          grid-column: 8/9;
+
+          .char_item_description {
+            right: calc(100% + 5px);
+          }
+        }
+
+        &.grid_center {
+          grid-row: 8/9;
+
+          .char_item_description {
+            bottom: calc(100% + 5px);
+            left: calc(100% + 5px);
+          }
+        }
+
+        @for $i from 1 through 8 {
+          &.left-#{$i}, &.right-#{$i} {
+            grid-row: #{$i} / #{$i + 1};
+
+            .char_item_description {
+              @if $i <= 4 {
+                top: 0;
+              } @else {
+                bottom: 0;
+              }
+            }
+          }
+        }
+
+        @for $i from 1 through 2 {
+          &.center-#{$i} {
+            grid-column: #{$i + 3} / #{$i + 4};
+          }
+        }
+      }
+    }
+  }
+}
+
+//1199-1024
+@media screen and (max-width: 1199px) {
+}
+
+//1023-768
+@media screen and (max-width: 1023px) {
+}
+
+//767-425
+@media screen and (max-width: 767px) {
+}
+
+//424-375
+@media screen and (max-width: 424px) {
+  .char {
+    &__title {
+      text-align: center;
+      font-size: 34px;
+    }
+
+    &__info {
+      &_title {
+        font-size: 22px;
+      }
+
+      .char_interface {
+        max-width: calc(40px * 6 + 4px * 5 + 16px + 2px);
+        grid-template-columns: repeat(6, $box_size);
+
+        .char_box {
+
+          &.grid_right {
+            grid-column: 6/7;
+          }
+
+          @for $i from 1 through 2 {
+            &.center-#{$i} {
+              grid-column: #{$i + 2} / #{$i + 3};
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//374-320
+@media screen and (max-width: 374px) {
+  .char {
+    &__title {
+      text-align: center;
+      font-size: 28px;
+    }
+  }
+}
+
+//319-0
+@media screen and (max-width: 319px) {
+}
